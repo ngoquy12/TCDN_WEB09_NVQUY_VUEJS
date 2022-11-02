@@ -83,11 +83,7 @@
                 class= "m-dropdown-type-feature m-dropdown-btn-text m-edit-employe">
                 <div class="m-btn-text">Sửa</div>
               </button>
-              <button
-                class="
-                  m-dropdown-type-feature m-dropdown-btn-ico m-dropdown-icon-emp
-                "
-              >
+              <button class="m-dropdown-type-feature m-dropdown-btn-ico m-dropdown-icon-emp">
                 <div class="m-btn-text">
                   <div class="m-icon-16 m-icon-arrow-down-blue"></div>
                 </div>
