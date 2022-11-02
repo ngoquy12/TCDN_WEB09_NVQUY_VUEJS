@@ -1,23 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <div>
+    <div class="m-container">
+      <TheMenu></TheMenu>
+     <BaseTable apiUrl="https://amis.manhnv.net/api/v1/Employees"></BaseTable>
+    </div>
+
+  </div>
 </template>
 
 <script>
-
+import TheMenu from "./components/layout/TheMenu.vue";
+import BaseTable from "./components/layout/BaseTable.vue"
 export default {
-  name: 'App',
+  name: "App",
   components: {
-  }
-}
+    TheMenu,
+    BaseTable
+  },
+  methods: {},
+  data() {
+    return {
+      employeeList: [],
+    };
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url(./css/main.css);
 </style>
