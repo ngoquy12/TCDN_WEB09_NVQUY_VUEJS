@@ -16,7 +16,6 @@
     border-color: #2ca01c;
 }
 
-
 .m-combo-action {
     display: flex;
 }
@@ -63,10 +62,19 @@
     position: absolute;
     background-color: #fff;
     border: 1px solid #babec5;
-    border-radius: 2px;
+    border-radius:4px;
     overflow: hidden;
     box-shadow: 0 -8px 34px 0 rgba(0, 0, 0, .05);
+    /* display: none; */
+}
+.m-combo-dropdown-panel{
+    bottom: 52px;
     min-width: 200px;
+}
+
+.m-combo-menu {
+    min-width: 400px;
+    top: 37px;
 }
 
 .m-dropdown-body-container {

@@ -2,22 +2,32 @@
   <div>
     <div class="m-content-header">
       <div class="m-header-title">Nhân viên</div>
-      <button class="m-button m-button-add-emp" title="(Insert)">
-        <div class="m-button-text">Thêm mới nhân viên</div>
-      </button>
+      <TheButton title="Thêm mới nhân viên" @click="showFormEmployee=true"/>
     </div>
+    <ThePopup ></ThePopup>
   </div>
 </template>
 <script>
+import ThePopup from "./ThePopup.vue";
+ import TheButton from "../base/Button.vue"
 export default {
   name: "TheContentHeader",
+  components:{
+    ThePopup,TheButton
+    
+  },
   props: [],
-  methods: {},
+  methods: {
+   
+  },
   data() {
-    return {};
+    return {
+      showFormEmployee: false
+    };
   },
 };
 </script>
   
 <style scoped>
+
 </style>

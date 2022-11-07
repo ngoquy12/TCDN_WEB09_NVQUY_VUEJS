@@ -13,7 +13,6 @@ td, th {
     min-width: 100%;
 }
 
-
 .m-table .m-thead .m-tr .m-th {
     border-right: 1px solid #c7c7c7;
     border-bottom: 1px solid #c7c7c7;
@@ -123,6 +122,13 @@ td, th {
 .m-th-title-dob{
     display: inline-block;
     text-align: center;
+}
+
+.m-th-title-fc{
+    display: flex;
+   justify-content: center;
+   padding-right: 0
+   ;
 }
 
 .m-td-widget {

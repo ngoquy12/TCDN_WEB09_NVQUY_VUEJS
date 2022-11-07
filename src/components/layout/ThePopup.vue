@@ -1,35 +1,25 @@
 <template>
     <div>
-        <div class="m-popup m-add-popup m-dialog ">
+        <div class="m-popup m-add-popup m-dialog" >
             <div class="m-popup-con">
                 <div class="m-popup-background"></div>
                 <div class="m-popup-drag">
                     <div class="m-popup m-popup-content">
                         <div class="m-popup--header">
                             <div class="m-popup--title">
-                                <div class="m-title m-title-content">Thông tin nhân viên</div>
+                                <div class="m-title">Thông tin nhân viên</div>
                                 <label class="m-popup-checkbox">
-                                    <input type="checkbox" class="m-input-checkbox-popup" />
-                                    <span class="m-checkbox">
-                                        <span class="m-checkbox-inner">
-                                            <div class="m-icon-16 m-icon-checkbox-active"></div>
-                                        </span>
-                                    </span>
+                                   <TheCheckbox/>
                                     <span class="m-input-checkbox-label">Là khách hàng</span>
                                 </label>
                                 <label class="m-popup-checkbox">
-                                    <input type="checkbox" class="m-input-checkbox-popup" />
-                                    <span class="m-checkbox">
-                                        <span class="m-checkbox-inner">
-                                            <div class="m-icon-16 m-icon-checkbox-active"></div>
-                                        </span>
-                                    </span>
+                                    <TheCheckbox/>
                                     <span class="m-input-checkbox-label">Là nhà cung cấp</span>
                                 </label>
                             </div>
                             <div class="m-popup--close">
                                 <div class="m-icon-24 m-icon-help" style="margin-right: 6px" title="Trợ giúp"></div>
-                                <div class="m-icon-24 m-icon-close m-close-add-popup" title="Đóng(ESC)">
+                                <div class="m-icon-24 m-icon-close m-close-add-popup">
                                 </div>
                             </div>
                         </div>
@@ -40,7 +30,7 @@
                                         <div class="m-col-1 m-flex-wrap">
                                             <div class="m-input-40 m-pr-6 m-pb-24">
                                                 <div class="m-flex">
-                                                    <div class="m-input-title">Mã</div>
+                                                    <TheLable lable="Mã"></TheLable>
                                                     <div class="m-input-title-require">&nbsp;*</div>
                                                 </div>
                                                 <input type="text" class="m-input m-input-require m-input-code" required
@@ -50,18 +40,17 @@
                                             </div>
                                             <div class="m-input-60 m-pb-24">
                                                 <div class="m-flex">
-                                                    <div class="m-input-title">Tên</div>
+                                                    <TheLable lable="Tên"></TheLable>
                                                     <div class="m-input-title-require">&nbsp;*</div>
                                                 </div>
                                                 <input type="text" class="m-input m-input-require" required
                                                     name="EmployeeName" maxlength="128" propName="EmployeeName"
                                                     tabindex="2" />
                                                 <div class="m-input-message-error">&lt;Tên&gt;không được để trống</div>
-
                                             </div>
                                             <div class="m-input-100 m-pb-24">
                                                 <div class="m-flex">
-                                                    <div class="m-input-title">Đơn vị</div>
+                                                    <TheLable lable="Đơn vị"></TheLable>
                                                     <div class="m-input-title-require">&nbsp;*</div>
                                                 </div>
                                                 <div class="m-combo-box ">
@@ -80,13 +69,14 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="m-input-message-error">&lt;Đơn vị&gt;không được để trống
-                                                    </div>
+                                                    <!-- API lấy thông tin phòng ban -->
+                                                    <TheListDepartment apiDepartments="https://amis.manhnv.net/api/v1/Departments"></TheListDepartment>         
                                                 </div>
+                                                <div class="m-input-message-error">&lt;Đơn vị&gt;không được để trống</div>
                                             </div>
                                             <div class="m-input-100 m-pb-24">
                                                 <div class="m-flex-wrap">
-                                                    <div class="m-input-title">Chức danh</div>
+                                                    <TheLable lable="Chức danh"></TheLable>
                                                 </div>
                                                 <input type="text" class="m-input" name="EmployeePosition"
                                                     maxlength="128" propName="EmployeePosition" tabindex="10" />
@@ -95,15 +85,14 @@
                                         <div class="m-col-2 m-flex-wrap">
                                             <div class="m-input-40 m-pr-6 m-pb-24">
                                                 <div class="m-flex-wrap">
-                                                    <div class="m-input-title">Ngày sinh</div>
+                                                    <TheLable lable="Ngày sinh"></TheLable>
                                                 </div>
                                                 <input type="date" class="m-input" name="DateOfBirth"
                                                     propName="DateOfBirth" tabindex="3" />
                                             </div>
                                             <div class="m-input-60 m-pb-24">
                                                 <div class="m-flex-wrap">
-                                                    <div class="m-input-title m-input-title-gender">Giới
-                                                        tính</div>
+                                                    <TheLable lable="Giới tính"></TheLable>
                                                 </div>
                                                 <div class="m-radio-group">
                                                     <label class="m-con-radio">
@@ -145,14 +134,14 @@
                                             </div>
                                             <div class="m-input-40 m-pb-24">
                                                 <div class="m-flex-wrap">
-                                                    <div class="m-input-title">Ngày cấp</div>
+                                                    <TheLable lable="Ngày cấp"></TheLable>
                                                 </div>
                                                 <input type="date" class="m-input" name="IdentityDate"
                                                     propName="IdentityDate" tabindex="9" />
                                             </div>
                                             <div class="m-input-100 m-pb-24">
                                                 <div class="m-flex-wrap">
-                                                    <div class="m-input-title">Nơi cấp</div>
+                                                    <TheLable lable="Nơi cấp"></TheLable>
                                                 </div>
                                                 <input type="text" class="m-input" name="IdentityPlace"
                                                     propName="IdentityPlace" tabindex="11" />
@@ -162,7 +151,7 @@
                                     <div class="m-content-1-col m-pb-24">
                                         <div class="m-input-100">
                                             <div class="m-flex-wrap">
-                                                <div class="m-input-title">Địa chỉ</div>
+                                                <TheLable lable="Đại chỉ"></TheLable>
                                             </div>
                                             <input type="text" class="m-input" name="Address" propName="Address"
                                                 tabindex="12" />
@@ -180,7 +169,7 @@
                                             </div>
                                             <div class="m-input-100 m-pb-24">
                                                 <div class="m-flex-wrap">
-                                                    <div class="m-input-title">Tài khoản ngân hàng</div>
+                                                    <TheLable lable="Tài khoản ngân hàng"></TheLable>
                                                 </div>
                                                 <input type="text" class="m-input" name="BankAccountNumber"
                                                     propName="BankAccountNumber" tabindex="16" />
@@ -197,29 +186,28 @@
                                             </div>
                                             <div class="m-input-100 m-pb-24">
                                                 <div class="m-flex-wrap">
-                                                    <div class="m-input-title">Tên ngân hàng</div>
+                                                    <TheLable lable="Tên ngân hàng"></TheLable>
+
                                                 </div>
-                                                <input type="text" class="m-input" name="BankName" propName="BankName"
-                                                    tabindex="17" />
+                                                <input type="text" class="m-input" name="BankName" propName="BankName" tabindex="17" />
                                             </div>
                                         </div>
                                         <div class="m-col-3 m-pr-6">
                                             <div class="m-input-100 m-pb-24">
                                                 <div class="m-flex-wrap">
-                                                    <div class="m-input-title">Email</div>
+                                                    <TheLable lable="Email"></TheLable>
                                                 </div>
-                                                <input type="text" id="m-email" class="m-input" name="Email"
-                                                    propName="Email" tabindex="15" isEmail />
+                                                <input type="text" id="m-email" class="m-input" name="Email" propName="Email" tabindex="15" isEmail />
+                                                <div class="m-input-message-error">&lt;Email&gt;Chưa đúng định dạng</div>
+
                                             </div>
                                             <div class="m-input-100 m-pb-24">
                                                 <div class="m-flex-wrap">
-                                                    <div class="m-input-title">Chi nhánh</div>
+                                                    <TheLable lable="Chi nhánh"></TheLable>
                                                 </div>
-                                                <input type="text" class="m-input" name="BankBranchName"
-                                                    propName="BankBranchName" tabindex="18" />
+                                                <input type="text" class="m-input" name="BankBranchName" propName="BankBranchName" tabindex="18" />
                                             </div>
                                         </div>
-                                        <div class="m-col-4"></div>
                                     </div>
                                 </form>
                             </div>
@@ -244,6 +232,7 @@
                                             tabindex="19">
                                             <div class="m-button-text">Cất và thêm</div>
                                         </button>
+                                        <!-- <TheButton title="Cất và thêm" @click="showFormEmployee=true"/> -->
                                     </div>
                                 </div>
                             </div>
@@ -256,14 +245,21 @@
 </template>
 
 <script>
+import TheListDepartment from "./TheListDepartment.vue";
+import TheLable from "../base/Lable.vue"
+import TheCheckbox from "../base/Checkbox.vue"
+// import TheButton from "../base/Button.vue"
 export default {
     name : "ThePopup",
-    props : [],
-    methods: {
-        
+    props : ["showFormEmployee"],
+    components:{
+       TheListDepartment, TheLable, TheCheckbox, 
     },
+    methods: {
+   
+  },
     data(){
-
+        
     }
 }
 </script>

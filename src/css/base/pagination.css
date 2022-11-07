@@ -53,6 +53,10 @@
     cursor: pointer;
 }
 
+.m-page-index:focus{
+    border: 1px solid #333;
+}
+
 .m-disable {
     cursor: default !important;
     color: #9e9e9e;
