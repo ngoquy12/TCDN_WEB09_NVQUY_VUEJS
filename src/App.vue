@@ -3,20 +3,20 @@
     <!-- class chung -->
     <div class="m-container">
       <!-- Phần menu  -->
-      <TheMenu/>
+      <TheMenu />
       <!-- Phần content -->
       <div class="m-content">
-         <!-- Phần navbar  -->
-        <TheNavbar/>
+        <!-- Phần navbar  -->
+        <TheNavbar />
         <div class="m-main-content">
-           <!-- header content  -->
-          <TheContentHeader/>
+          <!-- header content  -->
+          <TheContentHeader />
           <div class="m-content-body">
             <TheContentBody></TheContentBody>
-             <!-- table gọi api danh sách nhân viên  -->
-            <BaseTable apiUrl="https://amis.manhnv.net/api/v1/Employees"/>
-             <!-- Thanh phân trang  -->
-            <ThePaging/>
+            <!-- table gọi api danh sách nhân viên  -->
+            <BaseTable apiUrl="https://amis.manhnv.net/api/v1/Employees" />
+            <!-- Thanh phân trang  -->
+            <ThePaging />
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@ export default {
     TheNavbar,
     TheContentHeader,
     TheContentBody,
-    ThePaging
+    ThePaging,
   },
   methods: {},
   data() {

@@ -65,7 +65,7 @@
     border-radius:4px;
     overflow: hidden;
     box-shadow: 0 -8px 34px 0 rgba(0, 0, 0, .05);
-    /* display: none; */
+    display: none;
 }
 .m-combo-dropdown-panel{
     bottom: 52px;

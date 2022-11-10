@@ -2,32 +2,39 @@
   <div>
     <div class="m-content-header">
       <div class="m-header-title">Nhân viên</div>
-      <TheButton title="Thêm mới nhân viên" @click="showFormEmployee=true"/>
+      <TheButton
+        @click="showFormEmployee"
+        title="Thêm mới nhân viên"
+      ></TheButton>
     </div>
-    <ThePopup ></ThePopup>
+    <ThePopup v-if="isShow" />
+    <TheLoading />
   </div>
 </template>
 <script>
 import ThePopup from "./ThePopup.vue";
- import TheButton from "../base/Button.vue"
+import TheButton from "../base/Button.vue";
+import TheLoading from "../base/Loading.vue";
 export default {
   name: "TheContentHeader",
-  components:{
-    ThePopup,TheButton
-    
+  components: {
+    ThePopup,
+    TheButton,
+    TheLoading,
   },
   props: [],
   methods: {
-   
+    showFormEmployee() {
+      this.isShow = !this.isShow;
+    },
   },
   data() {
     return {
-      showFormEmployee: false
+      isShow: false,
     };
   },
 };
 </script>
   
 <style scoped>
-
 </style>

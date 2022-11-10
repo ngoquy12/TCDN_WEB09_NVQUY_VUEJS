@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="m-popup m-add-popup m-dialog" >
+        <div class="m-popup m-add-popup " v-show="isShow" >
             <div class="m-popup-con">
                 <div class="m-popup-background"></div>
                 <div class="m-popup-drag">
@@ -19,7 +19,7 @@
                             </div>
                             <div class="m-popup--close">
                                 <div class="m-icon-24 m-icon-help" style="margin-right: 6px" title="Trợ giúp"></div>
-                                <div class="m-icon-24 m-icon-close m-close-add-popup">
+                                <div class="m-icon-24 m-icon-close m-close-add-popup" @click="hiddenFormEmployee">
                                 </div>
                             </div>
                         </div>
@@ -232,7 +232,6 @@
                                             tabindex="19">
                                             <div class="m-button-text">Cất và thêm</div>
                                         </button>
-                                        <!-- <TheButton title="Cất và thêm" @click="showFormEmployee=true"/> -->
                                     </div>
                                 </div>
                             </div>
@@ -256,10 +255,14 @@ export default {
        TheListDepartment, TheLable, TheCheckbox, 
     },
     methods: {
-   
+        hiddenFormEmployee(){
+            this.isShow=!this.isShow
+        }
   },
     data(){
-        
+       return {
+            isShow : true,
+       }
     }
 }
 </script>
